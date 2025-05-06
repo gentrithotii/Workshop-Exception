@@ -12,9 +12,9 @@ objects.
 utility class.**
 
 📋 **Requirements:**
-- [ ] At least one method should be handled with a try-catch-finally.
-- [ ] At least one method should be handled with a try with resources with a catch.
-- [ ] One method declare a "throws" that needs to be handled at the method invocation.
+- ✅ At least one method should be handled with a try-catch-finally.
+- ✅ At least one method should be handled with a try with resources with a catch.
+- ✅ One method declare a "throws" that needs to be handled at the method invocation.
 - [ ] You should create one custom exception that will get thrown from the add methods in
   NameService class and handled with a friendly error message whenever you try to add a
   name that already exists.

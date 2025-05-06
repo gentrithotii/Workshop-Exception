@@ -72,7 +72,7 @@ public class CSVReader_Writer {
 
     /**
      * This method fetches strings from a file and put them into a list
-     * This method might throw IOException which due to the throws clause need to
+     * This method might throw IOException which due to the throws cause need to
      * be handled by the caller.
      *
      * @return List <String> of last names
@@ -89,7 +89,7 @@ public class CSVReader_Writer {
                     .flatMap(line -> Stream.of(line.split(",")))
                     .collect(Collectors.toList());
 
-
+        
         } finally {
             if (reader != null) {
                 reader.close();
