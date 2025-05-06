@@ -3,6 +3,7 @@ package se.lexicon.exceptions.workshop;
 import se.lexicon.exceptions.workshop.exception.DuplicateNameException;
 import se.lexicon.exceptions.workshop.data_access.NameService;
 import se.lexicon.exceptions.workshop.domain.Person;
+import se.lexicon.exceptions.workshop.exception.MyExceptionHandler;
 import se.lexicon.exceptions.workshop.fileIO.CSVReader_Writer;
 
 import java.io.IOException;
@@ -20,12 +21,13 @@ public class Main {
 
             NameService nameService = new NameService(maleFirstNames, femaleFirstNames, lastNames);
 
-            nameService.addFemaleFirstName("Alice");
+//            nameService.addFemaleFirstName("Alice");
+            nameService.addLastName("Andersson");
 
             Person test = nameService.getNewRandomPerson();
             System.out.println(test);
         } catch (Exception e) {
-            // pass the exception class to the handler class for handling and returning a proper message
+            MyExceptionHandler.handleExceptions(e);
         }
 
     }
