@@ -66,7 +66,7 @@ public class NameService {
      */
     public void addFemaleFirstName(String name) throws DuplicateNameException, IOException {
         if (femaleFirstNames.contains(name))
-            throw new DuplicateNameException("", name);
+            throw new DuplicateNameException("Can not add duplicate Female name : ", name);
 
         femaleFirstNames.add(name);
         CSVReader_Writer.saveFemaleNames(femaleFirstNames);
@@ -80,7 +80,8 @@ public class NameService {
      * @param name
      */
     public void addMaleFirstName(String name) throws DuplicateNameException, IOException {
-        if (maleFirstNames.contains(name)) throw new DuplicateNameException("Duplicate Male first name found," + name);
+        if (maleFirstNames.contains(name))
+            throw new DuplicateNameException("Can not add duplicate Male name: ", name);
 
         maleFirstNames.add(name);
         CSVReader_Writer.saveMaleNames(maleFirstNames);
@@ -93,7 +94,10 @@ public class NameService {
      *
      * @param lastName
      */
-    public void addLastName(String lastName) throws IOException {
+    public void addLastName(String lastName) throws DuplicateNameException, IOException {
+        if (lastNames.contains(lastName))
+            throw new DuplicateNameException("Can not add duplicate Last name: ", lastName);
+
         lastNames.add(lastName);
         CSVReader_Writer.saveLastNames(lastNames);
     }

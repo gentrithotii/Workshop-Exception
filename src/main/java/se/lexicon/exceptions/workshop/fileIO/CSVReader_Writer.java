@@ -117,10 +117,7 @@ public class CSVReader_Writer {
                 }
             }
         }
-
-
     }
-
 
     public static void saveMaleNames(List<String> maleNames) throws IOException {
         try (BufferedWriter writer = Files.newBufferedWriter(Paths.get("firstname_males.txt"))) {
@@ -133,6 +130,5 @@ public class CSVReader_Writer {
                 }
             }
         }
-
     }
 }
